@@ -27,6 +27,10 @@ APPOINTMENT_DATE = "//input[@id='txt_visit_date']"
 APPOINTMENT_DATE_RDN_DATE = "//td[normalize-space()='12']"
 APPOINTMENT_COMMENT = "//textarea[@id='txt_comment']"
 APPOINTMENT_BTN = "//button[@id='btn-book-appointment']"
+APPOINTMENT_CALENDAR = "//div[@class='datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top']"
+
+#HomePage
+HOMEPAGE_APPOINTMENT_BTN = "//a[@id='btn-make-appointment']"
 
 #Appoitnment Confirmation
 APPOINTMENT_CONFIRMATION_H2 = "//h2[normalize-space()='Appointment Confirmation']"

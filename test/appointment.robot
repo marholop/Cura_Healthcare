@@ -6,6 +6,7 @@ Library           SeleniumLibrary
 Variables        ../variable/my_variable.py
 Resource         ../Keywords/Appointment.robot
 Resource         ../Keywords/Login.robot
+Test Setup       Open Browser To Home Page
 Test Teardown    Close Browser
 
 *** Variables ***
@@ -14,7 +15,6 @@ ${BROWSER}    Firefox
 *** Test Cases ***
 # Make Valid Appointment
 Make Valid Appointment After Login First
-    Open Browser To Home Page
     Access Login Menu
     Input Username    ${VALID_USERNAME}
     Input Username Password    ${VALID_PASSWORD}
@@ -26,8 +26,32 @@ Make Valid Appointment After Login First
     Set Appointment Date
     Input Comment on Appointment Page    Appointment Created
     Submit Appointment
-    Confirmation Appointment Should Be Open    
+    Confirmation Appointment Should Be Open
 
+Make Valid Appointment Not Login First
+        Click Appointment Button in Home Page
+    Input Username    ${VALID_USERNAME}
+    Input Username Password    ${VALID_PASSWORD}
+    Submit Credentials
+    Select Appointment Facility
+    Check Hospital Readmission
+    Select Healthcare Program Medicalaid
+    Set Appointment Date
+    Input Comment on Appointment Page    Appointment Created
+    Submit Appointment
+    Confirmation Appointment Should Be Open
+
+Make Invalid Appointment with Empty Required Date
+    Access Login Menu
+    Input Username    ${VALID_USERNAME}
+    Input Username Password    ${VALID_PASSWORD}
+    Submit Credentials
+    Welcome Page Should Be Open
+    Select Appointment Facility
+    Input Comment on Appointment Page    Appointment Created
+    Submit Appointment
+    Verify Calendar Appears when Date Field is Empty
+    
 *** Keywords ***
 Open Browser To Home Page
     Open Browser    ${URL}    ${BROWSER}

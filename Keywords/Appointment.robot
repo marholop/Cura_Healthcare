@@ -29,3 +29,10 @@ Submit Appointment
 Confirmation Appointment Should Be Open
     Wait Until Page Contains Element    ${APPOINTMENT_CONFIRMATION_H2}
     Element Text Should Be    ${APPOINTMENT_CONFIRMATION_H2}    ${APPOINTMENT_CONFIRMATION_TXT}
+
+Click Appointment Button in Home Page
+    Click Element    ${HOMEPAGE_APPOINTMENT_BTN}
+
+Verify Calendar Appears when Date Field is Empty
+    Wait Until Page Contains Element    ${APPOINTMENT_CALENDAR}
+    
