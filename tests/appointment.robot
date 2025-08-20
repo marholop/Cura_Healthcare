@@ -29,7 +29,7 @@ Make Valid Appointment After Login First
     Confirmation Appointment Should Be Open
 
 Make Valid Appointment Not Login First
-        Click Appointment Button in Home Page
+    Click Appointment Button in Home Page
     Input Username    ${VALID_USERNAME}
     Input Username Password    ${VALID_PASSWORD}
     Submit Credentials
