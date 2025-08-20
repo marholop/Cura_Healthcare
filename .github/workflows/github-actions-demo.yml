@@ -1,4 +1,4 @@
-name: Robot Framework Tests
+name: Robot Framework Tests (Firefox)
 
 on:
   push:
@@ -22,8 +22,14 @@ jobs:
       - name: Install Firefox + GeckoDriver
         run: |
           sudo apt-get update
-          sudo apt-get install -y firefox xvfb
-          sudo apt-get install -y firefox-esr
+          sudo apt-get install -y wget tar xvfb
+          # Install Firefox
+          FIREFOX_VER=126.0
+          wget https://ftp.mozilla.org/pub/firefox/releases/$FIREFOX_VER/linux-x86_64/en-US/firefox-$FIREFOX_VER.tar.bz2
+          tar xjf firefox-*.tar.bz2
+          sudo mv firefox /opt/firefox
+          sudo ln -s /opt/firefox/firefox /usr/bin/firefox
+          # Install latest GeckoDriver
           GECKO_VER=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep "tag_name" | cut -d '"' -f 4)
           wget https://github.com/mozilla/geckodriver/releases/download/$GECKO_VER/geckodriver-$GECKO_VER-linux64.tar.gz
           tar -xvzf geckodriver-*-linux64.tar.gz
@@ -37,7 +43,7 @@ jobs:
           pip install git+https://github.com/robotframework/SeleniumLibrary.git
           pip install webdriver-manager
 
-      - name: Run Robot Framework Tests
+      - name: Run Robot Framework tests (Firefox headless)
         run: |
           mkdir -p results
           MOZ_HEADLESS=1 xvfb-run -a robot --variable BROWSER:firefox --outputdir results tests/
