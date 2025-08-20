@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Login in CURA HealthCare Service
+Documentation     Login in CURA HealthCare Service, add comment for test Jenkins pipeline
 Library           SeleniumLibrary
 Variables         ../variable/my_variable.py
 Resource          ../Keywords/Login.robot
