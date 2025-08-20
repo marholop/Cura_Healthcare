@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Making Appointment in CURA HealthCare Service
+Documentation     Making Appointment in CURA HealthCare Service , add comment for test Jenkins pipeline
 Library           SeleniumLibrary
 
 *** Settings ***
