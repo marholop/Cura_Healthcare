@@ -7,7 +7,7 @@ Test Setup        Open Browser To Home Page
 Test Teardown     Close Browser
 
 *** Variables ***
-${BROWSER}    Firefox
+${BROWSER}    firefox
 
 *** Test Cases ***
 # Valid Test Case
