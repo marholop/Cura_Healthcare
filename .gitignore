@@ -3,3 +3,6 @@ output.xml
 report.html
 *.log
 *.png
+*.pyc
+rflint-sonar.json
+.scannerwork
