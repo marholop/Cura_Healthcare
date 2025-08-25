@@ -28,6 +28,20 @@ Make Valid Appointment After Login First
     Submit Appointment
     Confirmation Appointment Should Be Open
 
+Make Valid Appointment After Login First
+    Access Login Menu
+    Input Username    ${VALID_USERNAME}
+    Input Username Password    ${VALID_PASSWORD}
+    Submit Credentials
+    Welcome Page Should Be Open
+    Select Appointment Facility
+    Check Hospital Readmission
+    Select Healthcare Program Medicalaid
+    Set Appointment Date
+    Input Comment on Appointment Page    Appointment Created
+    Submit Appointment
+    Confirmation Appointment Should Be Open
+
 Make Valid Appointment Not Login First
     Click Appointment Button in Home Page
     Input Username    ${VALID_USERNAME}
