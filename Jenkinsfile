@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'https://1d55d484767d.ngrok-free.app'        // ganti dengan URL SonarQube kamu
-        SONAR_LOGIN = credentials('sonar-robotframework-token')    // SonarQube token disimpan di Jenkins Credentials
+        SONAR_HOST_URL = 'https://1d55d484767d.ngrok-free.app'
+        SONAR_LOGIN = credentials('sonar-robotframework-token')6
     }
 
     stages {
