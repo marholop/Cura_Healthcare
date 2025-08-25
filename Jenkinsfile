@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'https://1d55d484767d.ngrok-free.app'
+        SONAR_HOST_URL = 'https://f89e37b6f1bc.ngrok-free.app'
         SONAR_LOGIN = credentials('sonar-robotframework-token')
     }
 
