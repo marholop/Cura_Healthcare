@@ -19,6 +19,10 @@ pipeline {
                   python -m venv venv
                   call venv\\Scripts\\activate
                   pip install --upgrade pip
+                  pip install robotframework
+                  pip install --upgrade robotframework-seleniumlibrary
+                  pip install git+https://github.com/robotframework/SeleniumLibrary.git
+                  pip install webdriver-manager
                   pip install robotframework-lint
                 """
             }
@@ -28,6 +32,7 @@ pipeline {
             steps {
                 bat """
                   call venv\\Scripts\\activate
+                  MOZ_HEADLESS=1 xvfb-run -a robot --variable BROWSER:firefox --outputdir results tests/
                   rflint tests > rflint.log || exit 0
                 """
             }
