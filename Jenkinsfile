@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SONAR_HOST_URL = 'https://1d55d484767d.ngrok-free.app'
-        SONAR_LOGIN = credentials('sonar-robotframework-token')6
+        SONAR_LOGIN = credentials('sonar-robotframework-token')
     }
 
     stages {
