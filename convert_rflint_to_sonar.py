@@ -8,7 +8,7 @@ def parse_rflint_log(log_file):
     pattern_file = re.compile(r"^\+ (.+)$")
     pattern_issue = re.compile(r"^(?P<level>[EW]): (?P<line>\d+), \d+: (?P<message>.+) \((?P<rule>.+)\)$")
 
-    with open(log_file, "r", encoding="utf-16") as f:
+    with open(log_file, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
 

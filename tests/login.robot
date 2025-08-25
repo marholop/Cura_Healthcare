@@ -7,7 +7,7 @@ Test Setup        Open Browser To Home Page
 Test Teardown     Close Browser
 
 *** Variables ***
-${BROWSER}    firefox
+${BROWSER}    headlessfirefox
 
 *** Test Cases ***
 # Valid Test Case

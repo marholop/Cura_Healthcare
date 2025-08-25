@@ -10,10 +10,24 @@ Test Setup       Open Browser To Home Page
 Test Teardown    Close Browser
 
 *** Variables ***
-${BROWSER}    firefox
+${BROWSER}    headlessfirefox
 
 *** Test Cases ***
 # Make Valid Appointment
+Make Valid Appointment After Login First
+    Access Login Menu
+    Input Username    ${VALID_USERNAME}
+    Input Username Password    ${VALID_PASSWORD}
+    Submit Credentials
+    Welcome Page Should Be Open
+    Select Appointment Facility
+    Check Hospital Readmission
+    Select Healthcare Program Medicalaid
+    Set Appointment Date
+    Input Comment on Appointment Page    Appointment Created
+    Submit Appointment
+    Confirmation Appointment Should Be Open
+
 Make Valid Appointment After Login First
     Access Login Menu
     Input Username    ${VALID_USERNAME}
