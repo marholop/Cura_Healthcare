@@ -32,7 +32,7 @@ pipeline {
             steps {
                 bat """
                   call venv\\Scripts\\activate
-                  MOZ_HEADLESS=1 xvfb-run -a robot --variable BROWSER:firefox --outputdir results tests/
+                  robot tests/
                   rflint tests > rflint.log || exit 0
                 """
             }
